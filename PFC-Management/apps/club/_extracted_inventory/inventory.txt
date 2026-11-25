@@ -1,0 +1,936 @@
+﻿PFC DIGITAL HUBSCREEN INVENTORY & SCREEN SPECIFICATION MATRIX
+Baseline: SRS v3.0 Production + Cursor Production To-Do Checklist v3.0
+1. Mục đích tài liệu
+Tài liệu này chuyển functional scope của PFC Digital Hub thành Screen Inventory và Screen Specification Matrix để Product, BA, UX/UI, Backend, Frontend, QA và Cursor/AI agent có thể dùng chung một baseline. Screen không đồng nghĩa với module: nhiều route/state có thể thuộc cùng một bounded module.
+Nguyên tắc: không tự động tạo một màn hình cho mọi FR. Một màn hình có thể có nhiều state; một use case có thể dùng nhiều màn hình. Việc thiết kế chi tiết API/component chỉ được chốt khi có requirement/contract tương ứng.
+2. Application Surface
+Surface
+Phạm vi
+PUBLIC WEB
+Landing, discovery và nội dung public
+MEMBER APP
+Khu vực thành viên đã đăng nhập
+SELLER / PROVIDER CENTER
+Quản lý bán hàng, dịch vụ, course, event và payout
+ADMIN PORTAL
+Quản trị, moderation, verification, payment, security, analytics
+3. Global / System Screens
+ID
+Screen
+Surface
+SYS-01
+Landing Page
+Public
+SYS-02
+Login
+Public
+SYS-03
+Register
+Public
+SYS-04
+Forgot Password
+Public
+SYS-05
+Reset Password
+Public
+SYS-06
+Email/OTP Verification
+User
+SYS-07
+Onboarding
+User
+SYS-08
+Home / Personal Dashboard
+Member
+SYS-09
+Global Search
+All
+SYS-10
+Search Results
+All
+SYS-11
+Notification Center
+Member
+SYS-12
+User Profile
+All
+SYS-13
+Edit Profile
+Member
+SYS-14
+Settings
+Member
+SYS-15
+Privacy & Consent
+Member
+SYS-16
+Help / FAQ
+All
+SYS-17
+Terms & Policies
+Public
+4. Screen Inventory theo Module
+Personal Finance Zone
+ID
+Screen
+FIN-01
+Financial Dashboard
+FIN-02
+Income Overview
+FIN-03
+Expense Overview
+FIN-04
+Transaction History
+FIN-05
+Add Transaction
+FIN-06
+Edit Transaction
+FIN-07
+Transaction Detail
+FIN-08
+Transaction Categories
+FIN-09
+Budget Overview
+FIN-10
+Create Budget
+FIN-11
+Edit Budget
+FIN-12
+Budget Detail
+FIN-13
+Saving Goals
+FIN-14
+Create Saving Goal
+FIN-15
+Saving Goal Detail
+FIN-16
+Saving Challenge
+FIN-17
+Challenge Detail
+FIN-18
+Financial Analytics
+FIN-19
+Financial Reports
+FIN-20
+Export Financial Data
+FIN-21
+Import CSV / Statement
+FIN-22
+Import Preview & Mapping
+FIN-23
+Import Result / Error
+FIN-24
+Financial Insights
+FIN-25
+Finance Settings
+FIN-26
+Location Discovery
+FIN-27
+Map View
+FIN-28
+Location Detail
+FIN-29
+Add Location
+FIN-30
+Edit Location
+FIN-31
+Review & Rating
+FIN-32
+Write Review
+FIN-33
+Category / Smart Tag
+FIN-34
+Saved Places
+Education Hub
+ID
+Screen
+EDU-01
+Education Hub Home
+EDU-02
+Course / Learning List
+EDU-03
+Course Detail
+EDU-04
+Course Enrollment
+EDU-05
+Learning Content
+EDU-06
+Video Player
+EDU-07
+Reading / eBook / Material
+EDU-08
+Template / Resource
+EDU-09
+Question Bank
+EDU-10
+Quiz
+EDU-11
+Test
+EDU-12
+Test Result
+EDU-13
+Learning Progress
+EDU-14
+My Learning
+EDU-15
+Certificate / Badge
+EDU-16
+Forum
+EDU-17
+Forum Topic
+EDU-18
+Create Discussion
+EDU-19
+Discussion Detail
+EDU-20
+My Learning Statistics
+EDU-A01
+Content Management
+EDU-A02
+Course Management
+EDU-A03
+Lesson Management
+EDU-A04
+Question Bank Management
+EDU-A05
+Quiz/Test Management
+EDU-A06
+Learning Analytics
+EDU-A07
+Certificate/Badge Management
+Project Marketplace
+ID
+Screen
+PRO-01
+Project Marketplace Home
+PRO-02
+Project List
+PRO-03
+Project Search / Filter
+PRO-04
+Project Detail
+PRO-05
+Create Project
+PRO-06
+Edit Project
+PRO-07
+Project Members
+PRO-08
+Find Collaborators
+PRO-09
+Collaborator Profile
+PRO-10
+Mentor Discovery
+PRO-11
+Mentor Profile
+PRO-12
+Collaboration Request
+PRO-13
+Project Application
+PRO-14
+Project Workspace
+PRO-15
+Project Tasks
+PRO-16
+Project Timeline
+PRO-17
+Project Documents
+PRO-18
+Project Discussion
+PRO-19
+Project Demo
+PRO-20
+Feedback & Rating
+PRO-21
+Project Analytics
+PRO-22
+My Projects
+PRO-23
+Project Dashboard
+PRO-24
+Manage Collaborators
+PRO-25
+Manage Mentor
+PRO-26
+Project Approval Status
+PRO-27
+Project Monetization / Paid Collaboration
+Opportunity Hub
+ID
+Screen
+OPP-01
+Opportunity Hub Home
+OPP-02
+Opportunity List
+OPP-03
+Opportunity Search
+OPP-04
+Opportunity Filter
+OPP-05
+Opportunity Detail
+OPP-06
+Internship Detail
+OPP-07
+Job Detail
+OPP-08
+Competition Detail
+OPP-09
+Scholarship Detail
+OPP-10
+Save Opportunity
+OPP-11
+Saved Opportunities
+OPP-12
+Apply Opportunity
+OPP-13
+External Application
+OPP-14
+Internal Application
+OPP-15
+My Applications
+OPP-16
+Application Status
+OPP-17
+Deadline Reminder
+OPP-18
+Opportunity Provider Profile
+OPP-A01
+Opportunity Management
+OPP-A02
+Create Opportunity
+OPP-A03
+Edit Opportunity
+OPP-A04
+Verification Queue
+OPP-A05
+Opportunity Review
+OPP-A06
+Verification Decision
+OPP-A07
+Provider Verification
+OPP-A08
+Expired Opportunity Management
+Marketplace
+ID
+Screen
+MKT-01
+Marketplace Home
+MKT-02
+Product/Service Listing
+MKT-03
+Category
+MKT-04
+Search Result
+MKT-05
+Product Detail
+MKT-06
+Service Detail
+MKT-07
+Course Detail / Purchase
+MKT-08
+Event Ticket Detail
+MKT-09
+Seller Profile
+MKT-10
+Seller Store
+MKT-11
+Cart
+MKT-12
+Checkout
+MKT-13
+Payment
+MKT-14
+Payment Result
+MKT-15
+Order Confirmation
+MKT-16
+My Orders
+MKT-17
+Order Detail
+MKT-18
+Review & Rating
+MKT-19
+Write Review
+MKT-20
+Refund Request
+MKT-21
+Refund Status
+SELL-01
+Seller Dashboard
+SELL-02
+Seller Registration
+SELL-03
+Seller Verification
+SELL-04
+Product Management
+SELL-05
+Create Product
+SELL-06
+Edit Product
+SELL-07
+Service Management
+SELL-08
+Course Management
+SELL-09
+Event/Ticket Management
+SELL-10
+Seller Orders
+SELL-11
+Seller Order Detail
+SELL-12
+Revenue
+SELL-13
+Payout
+SELL-14
+Payout History
+SELL-15
+Reconciliation
+SELL-16
+Seller Reviews
+SELL-17
+Seller Settings
+Payment Capability
+ID
+Screen
+PAY-01
+Checkout Payment
+PAY-02
+Payment Processing
+PAY-03
+Payment Success
+PAY-04
+Payment Failed
+PAY-05
+Payment Pending
+PAY-06
+Transaction Detail
+PAY-07
+Payment History
+PAY-08
+Refund Status
+PAY-A01
+Payment Transactions
+PAY-A02
+Payment Detail
+PAY-A03
+Refund Management
+PAY-A04
+Payout Management
+PAY-A05
+Reconciliation
+PAY-A06
+Payment Exceptions
+Community Hub
+ID
+Screen
+COM-01
+Community Home
+COM-02
+Community Feed
+COM-03
+Post Detail
+COM-04
+Create Post
+COM-05
+Edit Post
+COM-06
+Comment
+COM-07
+Create Poll
+COM-08
+Community Search
+COM-09
+Member Directory
+COM-10
+Member Profile
+COM-11
+Club/Group Directory
+COM-12
+Club/Group Detail
+COM-13
+Join Club/Group
+COM-14
+Create Club/Group
+COM-15
+Club/Group Members
+COM-16
+Club/Group Feed
+COM-17
+Team
+COM-18
+Team Detail
+COM-19
+Team Members
+COM-20
+Private Community
+COM-21
+Community Notifications
+COM-22
+My Communities
+COM-A01
+Community Management
+COM-A02
+Club/Group Management
+COM-A03
+Member Management
+COM-A04
+Role Management
+COM-A05
+Content Moderation
+COM-A06
+Report Queue
+COM-A07
+Private Community Access
+COM-A08
+Community Analytics
+Shared Event Engine
+ID
+Screen
+EVT-01
+Event Discovery
+EVT-02
+Event List
+EVT-03
+Event Detail
+EVT-04
+Event Search/Filter
+EVT-05
+Create Event
+EVT-06
+Edit Event
+EVT-07
+Event Registration
+EVT-08
+Ticket Selection
+EVT-09
+Event Checkout
+EVT-10
+Event Payment
+EVT-11
+Registration Confirmation
+EVT-12
+My Events
+EVT-13
+My Tickets
+EVT-14
+Ticket Detail
+EVT-15
+Event Check-in
+EVT-A01
+Event Dashboard
+EVT-A02
+Attendee Management
+EVT-A03
+Ticket Management
+EVT-A04
+Check-in Management
+EVT-A05
+Event Analytics
+Member / Identity / RBAC
+ID
+Screen
+MEM-01
+My Profile
+MEM-02
+Edit Profile
+MEM-03
+Account Settings
+MEM-04
+Security Settings
+MEM-05
+Change Password
+MEM-06
+Login Sessions
+MEM-07
+Privacy Settings
+MEM-08
+Consent Management
+MEM-09
+Connected Accounts
+MEM-10
+Membership
+MEM-11
+Membership Upgrade
+MEM-12
+Membership Benefits
+MEM-13
+My Activity
+MEM-14
+My Saved Items
+IAM-A01
+User Management
+IAM-A02
+User Detail
+IAM-A03
+Role Management
+IAM-A04
+Permission Management
+IAM-A05
+Role-Permission Matrix
+IAM-A06
+Access Audit
+Notification
+ID
+Screen
+NOT-01
+Notification Center
+NOT-02
+Notification Detail
+NOT-03
+Notification Preferences
+NOT-04
+Email Preferences
+NOT-05
+Push Preferences
+NOT-A01
+Notification Management
+NOT-A02
+Notification Template
+NOT-A03
+Notification Campaign
+NOT-A04
+Delivery Logs
+Search
+ID
+Screen
+SRCH-01
+Global Search
+SRCH-02
+Search Result
+SRCH-03
+Advanced Filter
+SRCH-04
+Search Result Detail
+Admin Portal
+ID
+Screen
+ADM-01
+Admin Dashboard
+ADM-02
+System Health
+ADM-03
+KPI Dashboard
+ADM-04
+Business Analytics
+ADM-05
+User Management
+ADM-06
+Member Management
+ADM-07
+Role Management
+ADM-08
+Permission Management
+ADM-09
+Content Management
+ADM-10
+Moderation Queue
+ADM-11
+Report Management
+ADM-12
+User Restriction
+ADM-13
+Block/Ban Management
+ADM-14
+Seller Management
+ADM-15
+Seller Verification
+ADM-16
+Product Management
+ADM-17
+Order Management
+ADM-18
+Payment Management
+ADM-19
+Refund Management
+ADM-20
+Payout Management
+ADM-21
+Reconciliation
+ADM-22
+Opportunity Management
+ADM-23
+Provider Verification
+ADM-24
+Verification Queue
+ADM-25
+Community Management
+ADM-26
+Club/Group Management
+ADM-27
+Community Moderation
+ADM-28
+Event Management
+ADM-29
+Event Approval
+ADM-30
+Event Analytics
+ADM-31
+Audit Log
+ADM-32
+System Configuration
+ADM-33
+Feature Configuration
+ADM-34
+Notification Configuration
+ADM-35
+Security Events
+ADM-36
+Data/Privacy Requests
+5. Cross-cutting Screen States
+☐ Loading state
+☐ Empty state
+☐ Error state
+☐ Permission denied / 403
+☐ Authentication required / 401
+☐ Not found / 404
+☐ Session expired
+☐ Offline / network error
+☐ Maintenance
+☐ Delete confirmation
+☐ Cancel confirmation
+☐ Leave community/project confirmation
+☐ Refund confirmation
+☐ Payment retry
+☐ Publish confirmation
+☐ Submit verification
+☐ Submit opportunity
+☐ Suspicious activity / re-authentication
+6. Screen Specification Matrix – Master Template
+Đây là matrix bắt buộc dùng khi chuyển Screen Inventory thành UI implementation. Không phải mọi ô đều phải có nội dung ngay từ đầu; TBD phải được đánh dấu rõ, không được AI tự phát minh.
+Screen ID
+Screen Name
+Route
+Surface
+Module
+Role(s)
+Entry Point
+Primary Use Case
+Components
+API / Contract
+Data / Entity
+Permission
+States
+Validation
+Security Rules
+Acceptance Criteria
+Test Case IDs
+Checklist Task IDs
+Status
+FIN-01
+Financial Dashboard
+/finance
+Member App
+Personal Finance
+Member
+Home / Finance
+View financial overview
+Summary cards; charts; filters
+GET /finance/dashboard
+Income, Expense, Budget, Goal
+Owner only
+Loading/Empty/Error
+Date range; currency
+No cross-user data exposure
+Dashboard shows authorized data only
+FIN-T01…
+FIN-*
+TBD
+MKT-12
+Checkout
+/checkout
+Member App
+Marketplace
+Buyer
+Cart
+Create order
+Address/order/payment summary
+POST /orders; payment contract
+Cart, Order, Payment
+Buyer
+Loading/Error/Success
+Cart; amount; item availability
+Server-side price/ownership/payment checks
+Order total equals server-calculated total
+MKT-T01…
+MKT-*
+TBD
+OPP-05
+Opportunity Detail
+/opportunities/:id
+Public/Member
+Opportunity Hub
+Public/Member
+Opportunity List
+View opportunity
+Detail; provider; save/apply
+GET /opportunities/:id
+Opportunity, Provider
+Public + action permission
+Loading/Expired/Not Found
+Eligibility/deadline
+Do not expose restricted provider data
+Verified status/deadline displayed correctly
+OPP-T01…
+OPP-*
+TBD
+COM-12
+Club/Group Detail
+/community/groups/:id
+Member App
+Community Hub
+Member/Manager
+Directory
+View/interact with group
+Header; feed; members; join
+GET group; POST join
+Group, Member, Post
+Group policy
+Private/Public/Forbidden
+Post/join rules
+Membership authorization server-side
+Private group inaccessible to non-members
+COM-T01…
+COM-*
+TBD
+ADM-10
+Moderation Queue
+/admin/moderation
+Admin Portal
+Admin & Moderation
+Moderator/Admin
+Admin nav
+Review reported content
+Queue; filters; detail; action modal
+GET reports; POST moderation action
+Report, Content, User
+Moderator policy
+Loading/Empty/Error
+Action reason required
+Audit all moderation actions
+Decision persisted and audited
+ADM-T01…
+ADM-*
+TBD
+7. Route / Module Mapping Rules
+☐ Route thuộc đúng bounded module; không route trực tiếp vào internal implementation của module khác.
+☐ Cross-module page chỉ orchestration; business rule vẫn thuộc module owner.
+☐ Public page không được gọi API privileged chỉ vì UI ẩn control.
+☐ Permission phải được enforce server-side; frontend chỉ là UX layer.
+☐ Financial screens phải áp dụng ownership + sensitive-data policy.
+☐ Payment screens phải dùng payment abstraction và không chứa business logic vendor-specific.
+☐ Admin screens phải dùng RBAC/policy riêng, audit action và least privilege.
+☐ Private Community screens phải kiểm tra membership/role ở backend.
+☐ Seller/Payout screens phải tách quyền seller, finance/admin và không lộ dữ liệu seller khác.
+☐ AI-generated UI/code phải map về Screen ID + Requirement/Checklist Task ID.
+8. Screen → API → Data → Permission → Test → Checklist Traceability
+Mỗi screen khi bắt đầu implementation phải có traceability tối thiểu: Screen ID → Primary Use Case/FR → API contract → Data entity → Permission → Acceptance Criteria → Test Case → Checklist Task ID. Điều này giúp QA và Cursor xác minh completeness thay vì chỉ kiểm tra số lượng màn hình.
+Screen ID
+FR/UC
+API
+Entity
+Permission
+AC
+Test
+Checklist
+Evidence
+Status
+FIN-01
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+EDU-05
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+PRO-14
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+OPP-05
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+MKT-12
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+COM-12
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+EVT-03
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+ADM-10
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+TBD
+9. Screen QA / Definition of Done
+☐ Screen có Screen ID duy nhất.
+☐ Route được xác định hoặc đánh dấu TBD.
+☐ Module ownership được xác định.
+☐ Role/permission được xác định.
+☐ Entry point và primary use case được xác định.
+☐ API/contract được map.
+☐ Data/entity được map.
+☐ Loading/empty/error/permission/not-found states được xử lý.
+☐ Validation và server-side authorization được kiểm tra.
+☐ Security impact được review.
+☐ Acceptance criteria có thể test.
+☐ Test case được map.
+☐ Checklist task được map.
+☐ Evidence được lưu.
+☐ Architecture/Security review pass nếu screen có impact tương ứng.
+10. Tổng kết & lưu ý
+Screen Inventory này là baseline UX/system surface được suy ra từ scope đã thống nhất của PFC Digital Hub. Các chi tiết như route chính thức, API path, component library, field-level validation và dữ liệu cụ thể cần được chốt trong Screen Specification Matrix/ADR/API contract trước implementation nếu SRS chưa quy định.
+Theo tài liệu BA Handbook, SRS có thể bao gồm functional requirements, quality-of-service requirements, user profiles và traceability; role map dùng để mô tả user roles/external systems tương tác với hệ thống. Vì vậy Screen Matrix này được thiết kế như lớp bridge giữa SRS/requirements và implementation/testing, không thay thế SRS.
+

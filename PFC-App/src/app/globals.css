@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+/*
+ * PFC design tokens (ADR-009, provisional until brand kit sign-off — DEC-M4).
+ * Primary sampled from mockup buttons (source/ screens 2, 8, 22): #6A5FDD.
+ * Logo lavender sampled from brand/pfc-logo.png: #8479C7.
+ */
+:root {
+  color-scheme: light;
+  --pfc-primary: #6a5fdd;
+  --pfc-primary-press: #5649c9;
+  --pfc-primary-soft: #efedfc;
+  --pfc-on-primary: #ffffff;
+  --pfc-brand: #8479c7;
+
+  --pfc-bg: #f7f6fc;
+  --pfc-surface: #ffffff;
+  --pfc-surface-2: #f2f1f9;
+  --pfc-text: #1c1a2e;
+  --pfc-text-2: #4a4760;
+  --pfc-muted: #6b6882;
+  --pfc-line: #e7e5f3;
+
+  --pfc-income: #16a34a;
+  --pfc-income-soft: #e8f7ee;
+  --pfc-expense: #d1343a;
+  --pfc-expense-soft: #fdecec;
+  --pfc-warning: #b7791f;
+  --pfc-warning-soft: #fdf5e6;
+
+  --pfc-shadow: 0 6px 20px rgba(60, 50, 140, 0.08);
+  --pfc-shadow-lg: 0 16px 40px rgba(40, 30, 110, 0.18);
+
+  --app-max-w: 430px;
+  --header-h: 56px;
+  --tabbar-h: 64px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Dark: explicit choice, or system preference when the user picked "Tự động". */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --pfc-primary: #8b82f0;
+  --pfc-primary-press: #a39cf5;
+  --pfc-primary-soft: #2a2750;
+  --pfc-on-primary: #14122a; /* dark ink: white on #8b82f0 fails WCAG AA */
+  --pfc-bg: #12111c;
+  --pfc-surface: #1c1a2b;
+  --pfc-surface-2: #252338;
+  --pfc-text: #f2f1fa;
+  --pfc-text-2: #c9c6dd;
+  --pfc-muted: #9592ad;
+  --pfc-line: #2f2c45;
+  --pfc-income: #3ccf74;
+  --pfc-income-soft: #173325;
+  --pfc-expense: #ff6b6f;
+  --pfc-expense-soft: #3a1d22;
+  --pfc-warning: #e8b04f;
+  --pfc-warning-soft: #3a2f17;
+  --pfc-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --pfc-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --pfc-primary: #8b82f0;
+    --pfc-primary-press: #a39cf5;
+    --pfc-primary-soft: #2a2750;
+    --pfc-on-primary: #14122a;
+    --pfc-bg: #12111c;
+    --pfc-surface: #1c1a2b;
+    --pfc-surface-2: #252338;
+    --pfc-text: #f2f1fa;
+    --pfc-text-2: #c9c6dd;
+    --pfc-muted: #9592ad;
+    --pfc-line: #2f2c45;
+    --pfc-income: #3ccf74;
+    --pfc-income-soft: #173325;
+    --pfc-expense: #ff6b6f;
+    --pfc-expense-soft: #3a1d22;
+    --pfc-warning: #e8b04f;
+    --pfc-warning-soft: #3a2f17;
+    --pfc-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --pfc-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@theme inline {
+  --color-primary: var(--pfc-primary);
+  --color-primary-press: var(--pfc-primary-press);
+  --color-primary-soft: var(--pfc-primary-soft);
+  --color-on-primary: var(--pfc-on-primary);
+  --color-bg: var(--pfc-bg);
+  --color-surface: var(--pfc-surface);
+  --color-surface-2: var(--pfc-surface-2);
+  --color-ink: var(--pfc-text);
+  --color-ink-2: var(--pfc-text-2);
+  --color-muted: var(--pfc-muted);
+  --color-line: var(--pfc-line);
+  --color-income: var(--pfc-income);
+  --color-income-soft: var(--pfc-income-soft);
+  --color-expense: var(--pfc-expense);
+  --color-expense-soft: var(--pfc-expense-soft);
+  --color-warning: var(--pfc-warning);
+  --color-warning-soft: var(--pfc-warning-soft);
+  --font-sans: var(--font-pfc), "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius-card: 20px;
+  --radius-control: 14px;
+  --shadow-card: var(--pfc-shadow);
+  --shadow-sheet: var(--pfc-shadow-lg);
+}
+
+/* ---------- Base ---------- */
+html {
+  background: var(--pfc-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--pfc-bg);
+  color: var(--pfc-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+a,
+button,
+[role="button"],
+label {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid var(--pfc-primary);
+  outline-offset: 2px;
+}
+/* iOS zooms inputs below 16px; keep zoom enabled for accessibility and size inputs instead. */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* ---------- App canvas ---------- */
+/* Phone: full width. Desktop: centred phone-sized canvas. Document scroll (not an inner
+   scroller) so iOS collapses the address bar and tap-status-bar-to-top works. */
+.app-canvas {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-max-w);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--pfc-bg);
+}
+@media (min-width: 600px) {
+  body {
+    background: radial-gradient(circle at 30% 20%, #e3dffb 0, transparent 45%),
+      radial-gradient(circle at 80% 80%, #ece3f4 0, transparent 40%), #dcd8ef;
+  }
+  :root[data-theme="dark"] body {
+    background: #0a0912;
+  }
+  .app-canvas {
+    box-shadow: 0 0 0 1px var(--pfc-line), 0 30px 80px rgba(30, 20, 90, 0.18);
+  }
+}
+@media (min-width: 600px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body {
+    background: #0a0912;
+  }
+}
+
+.with-tabbar {
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 24px);
+}
+
+/* Fixed bars stay aligned to the centred canvas on desktop. Uses the standalone `translate`
+   property (not `transform`) so enter animations that animate `transform` can't undo it. */
+.fixed-in-canvas {
+  position: fixed;
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  max-width: var(--app-max-w);
+}
+
+/* ---------- Motion ---------- */
+@keyframes pfc-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pfc-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes pfc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pfc-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.page-enter {
+  /* backwards, not both: a transform left on the wrapper after the animation would become
+     the containing block for position:fixed children (sticky bars, FAB) and misplace them. */
+  animation: pfc-page-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.sheet-enter {
+  animation: pfc-sheet-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.backdrop-enter {
+  animation: pfc-fade-in 200ms ease-out both;
+}
+.pressable {
+  transition: transform 120ms ease, background-color 120ms ease, opacity 120ms ease;
+}
+.pressable:active {
+  transform: scale(0.97);
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--pfc-surface-2);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: pfc-shimmer 1.3s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .sheet-enter,
+  .backdrop-enter {
+    animation: none;
+  }
+  .skeleton::after {
+    animation: none;
+  }
+  .pressable:active {
+    transform: none;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

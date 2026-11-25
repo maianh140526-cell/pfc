@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671162696136",
+    "project_id": "quan-li-chi-tieu-9e217",
+    "storage_bucket": "quan-li-chi-tieu-9e217.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671162696136:android:9f817c92e55c8eaddb00fd",
+        "android_client_info": {
+          "package_name": "com.example.finance_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671162696136-boom76url8i17h0t3i9b1g9ink6ach3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuiGg0yz5KKrXqn05U2_inleDP-wFjPh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671162696136-boom76url8i17h0t3i9b1g9ink6ach3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f6fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12111c" media="(prefers-color-scheme: dark)" />
+    <title>Mất kết nối · PFC</title>
+    <!--
+      Served by the service worker for any page navigation while offline.
+      Deliberately self-contained (no Next.js runtime): a Next page served under another
+      URL would try to fetch that route's data and crash without network.
+    -->
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f6fc;
+        --surface: #ffffff;
+        --text: #1c1a2e;
+        --muted: #6b6882;
+        --primary: #6a5fdd;
+        --primary-soft: #efedfc;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #12111c;
+          --surface: #1c1a2b;
+          --text: #f2f1fa;
+          --muted: #9592ad;
+          --primary: #8b82f0;
+          --primary-soft: #2a2750;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+      }
+      main { max-width: 320px; }
+      .icon {
+        width: 80px; height: 80px; margin: 0 auto 16px; border-radius: 50%;
+        display: grid; place-items: center; background: var(--primary-soft); color: var(--primary);
+      }
+      h1 { font-size: 20px; margin: 0 0 8px; }
+      p { margin: 0 0 24px; color: var(--muted); line-height: 1.5; font-size: 15px; }
+      button {
+        width: 100%; min-height: 48px; border: 0; border-radius: 14px;
+        background: var(--primary); color: #fff; font: inherit; font-weight: 700; font-size: 15px;
+        cursor: pointer; touch-action: manipulation;
+      }
+      button:active { transform: scale(0.97); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h.01" /><path d="M8.5 16.43a5 5 0 0 1 7 0" /><path d="M2 8.82a15 15 0 0 1 4.17-2.65" />
+          <path d="M10.66 5c4.01-.36 8.14.9 11.34 3.76" /><path d="M16.85 11.25a10 10 0 0 1 2.22 1.68" />
+          <path d="M5 13a10 10 0 0 1 5.24-2.76" /><path d="m2 2 20 20" />
+        </svg>
+      </div>
+      <h1>Bạn đang ngoại tuyến</h1>
+      <p>Không có kết nối mạng. Kiểm tra Wi-Fi hoặc dữ liệu di động rồi thử lại.</p>
+      <button type="button" onclick="location.reload()">Thử lại</button>
+    </main>
+    <script>
+      // Come back automatically as soon as the connection returns.
+      window.addEventListener("online", function () { location.reload(); });
+    </script>
+  </body>
+</html>
